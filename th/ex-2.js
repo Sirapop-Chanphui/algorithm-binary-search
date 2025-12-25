@@ -19,8 +19,8 @@ const updateStudentScore = (studentsInfo, targetStudent, addScore) => {
   while (left <= right) {
     let mid = Math.floor((left + right) / 2);
     if (studentsInfo[mid].name === targetStudent) {
-      studentsInfo[mid].score = addScore;
-      return `${targetStudent} score is now ${addScore}`;
+      studentsInfo[mid].score += addScore;
+      return `${targetStudent} score is now ${studentsInfo[mid].score}`;
     } else if (studentsInfo[mid].name < targetStudent) {
       left = mid + 1;
     } else {
